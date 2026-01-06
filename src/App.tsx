@@ -27,8 +27,9 @@ function App() {
 
   return (
     <>
-      <div className='w-full h-40'>
-        <div className='flex flex-row justify-center items-center h-9/12 w-full bg-blue-200'>
+      <div className='relative w-full h-64'>
+        <img src="/SVG/header.svg" alt="Header" className='absolute h-full w-full -z-10 object-cover object-bottom' />
+        <div className='flex flex-row justify-center items-center h-4/5 w-full'>
           <div>
             <h1>Hola, Gabriela</h1>
             ¡Organizamos tu día juntas!

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1921 330.26">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e8edf6;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: url(#Nueva_muestra_de_motivo_2);
+        stroke: url(#Nueva_muestra_de_motivo_5);
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        fill: #c1d0ed;
+      }
+    </style>
+    <pattern id="Nueva_muestra_de_motivo_2" data-name="Nueva muestra de motivo 2" x="0" y="0" width="684.24" height="348.77" patternTransform="translate(.5 .5)" patternUnits="userSpaceOnUse" viewBox="0 0 684.24 348.77">
+      <g>
+        <rect class="cls-2" y="0" width="684.24" height="348.77"/>
+        <rect class="cls-4" x="0" y="0" width="684.24" height="348.77"/>
+        <path class="cls-1" d="M250.9,257c3.59-17.51-12.58-33.23-31.29-33.07,14.81-61.63-97.38-68.69-85.99-4.63-21.42-14.11-47.27,15.22-40.43,37.68,48.63.15,108.44.15,157.71.02Z"/>
+        <path class="cls-1" d="M591.89,164.51c4.53-22.12-15.88-41.98-39.52-41.77,18.7-77.85-123.01-86.76-108.62-5.85-27.06-17.82-59.71,19.23-51.07,47.59,61.42.19,136.97.19,199.21.03Z"/>
+      </g>
+    </pattern>
+    <pattern id="Nueva_muestra_de_motivo_5" data-name="Nueva muestra de motivo 5" x="0" y="0" width="684.24" height="348.77" patternTransform="translate(.5 .5)" patternUnits="userSpaceOnUse" viewBox="0 0 684.24 348.77">
+      <g>
+        <rect class="cls-2" y="0" width="684.24" height="348.77"/>
+        <rect class="cls-4" x="0" y="0" width="684.24" height="348.77"/>
+        <path class="cls-1" d="M236.72,262.13c4.24-20.67-14.84-39.22-36.93-39.02,17.48-72.74-114.93-81.07-101.49-5.47-25.28-16.65-55.79,17.97-47.72,44.47,57.39.18,127.98.18,186.13.03Z"/>
+        <path class="cls-1" d="M637.18,189.7c5.29-25.8-18.53-48.97-46.1-48.72,21.82-90.8-143.48-101.2-126.69-6.83-31.56-20.79-69.65,22.43-59.57,55.51,71.65.22,159.76.23,232.36.03Z"/>
+      </g>
+    </pattern>
+  </defs>
+  <g id="F">
+    <path class="cls-3" d="M.5,311.73s34.12,20.96,105.17,17.68c64.37-2.97,129.25-34.34,183.13-34.57,55.33-.23,125.79,30.97,203.47,31.08,77.24.11,136.8-40.43,238.12-38.24s140.47,40.64,230.11,41.63,112-36.47,221.21-39.67,152.63,38.59,260.52,36.29c107.89-2.3,136.69-38.26,217.11-38.26s101.38,43.6,200.02,41.36c59.47-1.35,61.13-10.02,61.13-10.02V.5H.5v311.23Z"/>
+  </g>
+</svg>
