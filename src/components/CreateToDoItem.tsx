@@ -1,14 +1,17 @@
-import React from "react"
 import add from "/add.svg"
 
-function CreateToDoItem() {
-  const [inputCreateSearch, setInputCreateSearch] = React.useState("");
+type Props = {
+  inputValue: string;
+  setInputValue: (value: string) => void;
+}
+
+function CreateToDoItem({ inputValue, setInputValue }: Props) {
   return (
     <div className="flex flex-row justify-between border-2 border-gray-300 rounded-lg py-2 px-4 w-full">
       <input
-        value={inputCreateSearch}
+        value={inputValue}
         onChange={(ev) => {
-          setInputCreateSearch(ev.target.value);
+          setInputValue(ev.target.value);
         }}
         type="text"
         placeholder="Busca o crea una tarea"

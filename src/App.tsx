@@ -1,3 +1,5 @@
+import React from "react"
+
 import { CreateToDoItem } from '@/components/CreateToDoItem'
 import { ToDoFilter } from '@/components/ToDoFilter'
 import ToDoList from '@/components/ToDoList'
@@ -24,21 +26,28 @@ const defaultToDo: ToDo[] = [
 ]
 
 function App() {
+  const [inputCreateSearch, setInputCreateSearch] = React.useState("");
+  const [toDos, setTodos] = React.useState(defaultToDo);
 
+  const toDoComplteds = toDos.filter(todo => !!todo.completed).length;
+  const toDoTotal = toDos.length;
   return (
     <>
       <div className='relative w-full h-64'>
         <img src="/SVG/header.svg" alt="Header" className='absolute h-full w-full -z-10 object-cover object-bottom' />
         <div className='flex flex-row justify-center items-center h-4/5 w-full'>
           <div>
-            <h1>Hola, Gabriela</h1>
-            ¡Organizamos tu día juntas!
+            <h1 className="font-semibold">Hola, Gabriela</h1>
+            <p className="text-lg">¡Organizemos tu día juntas! <br /> Tienes completas <strong>{toDoComplteds}</strong> de tus <strong>{toDoTotal}</strong> tareas.</p>
           </div>
           <img src={imgPortada} alt="Chica tierna sonriendo" className='mix-blend-multiply h-full' />
         </div>
-      </div>
+      </div >
       <div className='w-1/2 m-auto flex flex-col gap-4 justify-center items-center mt-4'>
-        <CreateToDoItem />
+        <CreateToDoItem
+          inputValue={inputCreateSearch}
+          setInputValue={setInputCreateSearch}
+        />  {/* Component para crear o buscar una tarea */}
         <ToDoFilter />
         <ToDoList>
           {
