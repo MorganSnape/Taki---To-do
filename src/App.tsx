@@ -20,14 +20,22 @@ const defaultToDo: ToDo[] = [
   { text: "Limpiar la casa", completed: false, color: "blueLight" },
   { text: "Estudiar React", completed: true, color: "orange" },
   { text: "Comprar comida", completed: false, color: "pink" },
-  { text: "Organizar escritorio ", completed: true, color: "blue" },
-  { text: "Terminar Hornet", completed: false, color: "blueLight" },
-  { text: "Comprar lanas bufanda", completed: false, color: "orange" },
+  { text: "Organizar escritorio ", completed: true, color: "blueLight" },
+  { text: "Terminar Hornet", completed: false, color: "orange" },
+  { text: "Comprar lanas bufanda", completed: false, color: "pink" },
 ]
 
 function App() {
   const [inputCreateSearch, setInputCreateSearch] = React.useState("");
   const [toDos, setTodos] = React.useState(defaultToDo);
+
+
+  const searchedTodos = toDos.filter(
+    (todo) => {
+      const toDoText = todo.text.toLocaleLowerCase();
+      const searchText = inputCreateSearch.toLocaleLowerCase();
+      return toDoText.includes(searchText);
+    })
 
   const toDoComplteds = toDos.filter(todo => !!todo.completed).length;
   const toDoTotal = toDos.length;
@@ -48,13 +56,8 @@ function App() {
           inputValue={inputCreateSearch}
           setInputValue={setInputCreateSearch}
         />  {/* Component para crear o buscar una tarea */}
-        <ToDoFilter />
-        <ToDoList>
-          {
-            defaultToDo.map((todo) => (
-              <ToDoItem key={todo.text} {...todo} />
-            ))}
-        </ToDoList>
+
+        <ToDoFilter searchedTodos={searchedTodos} toDoTotal={toDoTotal} toDoComplteds={toDoComplteds} onComplete = {"hola"} />
       </div>
     </>
   )

@@ -16,7 +16,7 @@ function CreateToDoItem({ inputValue, setInputValue }: Props) {
         type="text"
         placeholder="Busca o crea una tarea"
         className="flex-1" />
-      <button className="bg-cyan-400 border-2 border-cyan-500 rounded-full p-1 cursor-pointer hover:bg-cyan-500 transition-colors">
+      <button className="bg-yellow-400 rounded-full p-1 cursor-pointer hover:bg-yellow-300 transition-colors">
         <img src={add} alt="Agregar tarea" className="w-10 h-10" />
       </button>
     </div>

@@ -5,6 +5,7 @@ type ToDoItemProps = {
   text: string;
   completed: boolean;
   color: string;
+  onComplete: () => void;
 }
 
 function ToDoItem(props: ToDoItemProps) {
