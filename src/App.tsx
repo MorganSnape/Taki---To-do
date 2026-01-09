@@ -37,7 +37,7 @@ function App() {
           <img src={imgPortada} alt="Chica tierna sonriendo" className='mix-blend-multiply h-full' />
         </div>
       </div>
-      <div className='w-1/2 m-auto flex flex-col gap-4 justify-center items-center'>
+      <div className='w-1/2 m-auto flex flex-col gap-4 justify-center items-center mt-4'>
         <CreateToDoItem />
         <ToDoFilter />
         <ToDoList>
