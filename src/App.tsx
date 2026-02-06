@@ -2,8 +2,6 @@ import React from "react"
 
 import { CreateToDoItem } from '@/components/CreateToDoItem'
 import { ToDoFilter } from '@/components/ToDoFilter'
-import ToDoList from '@/components/ToDoList'
-import { ToDoItem } from '@/components/ToDoItem'
 import type { TodoColor } from './config/todoColors'
 
 import imgPortada from '/img/portada.jpg'
@@ -27,7 +25,7 @@ const defaultToDo: ToDo[] = [
 
 function App() {
   const [inputCreateSearch, setInputCreateSearch] = React.useState("");
-  const [toDos, setTodos] = React.useState(defaultToDo);
+  const [toDos, setToDos] = React.useState(defaultToDo);
 
 
   const searchedTodos = toDos.filter(
@@ -37,8 +35,24 @@ function App() {
       return toDoText.includes(searchText);
     })
 
+  const completeToDo = (text: string) => {
+    const newToDos = [...toDos];
+    const toDoIndex = newToDos.findIndex(todo => todo.text === text);
+    newToDos[toDoIndex].completed = !newToDos[toDoIndex].completed;
+    setToDos(newToDos);
+  }
+
+  const deleteToDo = (text: string) => {
+    const newToDos = [...toDos]
+    const indexToDos = newToDos.findIndex(todo => todo.text === text);
+    newToDos.splice(indexToDos, 1);
+    setToDos(newToDos);
+  }
+
+
   const toDoComplteds = toDos.filter(todo => !!todo.completed).length;
   const toDoTotal = toDos.length;
+
   return (
     <>
       <div className='relative w-full h-64'>
@@ -46,7 +60,7 @@ function App() {
         <div className='flex flex-row justify-center items-center h-4/5 w-full'>
           <div>
             <h1 className="font-semibold">Hola, Gabriela</h1>
-            <p className="text-lg">¡Organizemos tu día juntas! <br /> Tienes completas <strong>{toDoComplteds}</strong> de tus <strong>{toDoTotal}</strong> tareas.</p>
+            <p className="text-lg">{toDoComplteds === toDoTotal ? "¡Felicidades! no tienes tareas pendientes 🎉" : "¡Organizemos tu día juntas!"} <br /> Tienes completas <strong>{toDoComplteds}</strong> de tus <strong>{toDoTotal}</strong> tareas.</p>
           </div>
           <img src={imgPortada} alt="Chica tierna sonriendo" className='mix-blend-multiply h-full' />
         </div>
@@ -57,7 +71,7 @@ function App() {
           setInputValue={setInputCreateSearch}
         />  {/* Component para crear o buscar una tarea */}
 
-        <ToDoFilter searchedTodos={searchedTodos} toDoTotal={toDoTotal} toDoComplteds={toDoComplteds} onComplete = {"hola"} />
+        <ToDoFilter searchedTodos={searchedTodos} toDoTotal={toDoTotal} toDoComplteds={toDoComplteds} completeToDo={completeToDo} deleteToDo={deleteToDo} />
       </div>
     </>
   )

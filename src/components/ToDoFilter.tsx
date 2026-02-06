@@ -5,14 +5,21 @@ import ToDoList from "./ToDoList"
 
 type FilterType = "all" | "completed" | "pending";
 
+type ToDo = {
+  text: string;
+  completed: boolean;
+  color: string;
+}
+
 type Props = {
   searchedTodos: ToDo[];
   toDoTotal: number;
   toDoComplteds: number;
-  onComplete: () => void;
+  completeToDo: (text: string) => void;
+  deleteToDo: (text: string) => void;
 }
 
-function ToDoFilter({ searchedTodos, toDoTotal, toDoComplteds, onComplete }: Props) {
+function ToDoFilter({ searchedTodos, toDoTotal, toDoComplteds, completeToDo, deleteToDo }: Props) {
 
   const [filter, setFilter] = useState<FilterType>("all");
 
@@ -24,7 +31,7 @@ function ToDoFilter({ searchedTodos, toDoTotal, toDoComplteds, onComplete }: Pro
 
   return (
     <>
-      <div className="flex flex-row justify-between border-1 border-gray-300 rounded-lg w-full ">
+      <div className="flex flex-row justify-between border border-gray-300 rounded-lg w-full ">
         <button onClick={() => setFilter("all")} className={`${filter === "all" ? "bg-pink-400 font-bold text-white" : ""} py-2 px-4 rounded-lg`}>
           Todas
           <span className={`${filter === "all" ? "bg-pink-300" : "bg-gray-300"} ml-2 px-2 py-1 rounded-full text-xs font-body font-bold`}>
@@ -48,8 +55,8 @@ function ToDoFilter({ searchedTodos, toDoTotal, toDoComplteds, onComplete }: Pro
         {
           filteredTodos.length > 0 ? (
             filteredTodos.map((todo) => (
-              <ToDoItem key={todo.text} onComplete={onComplete} {...todo} />
-            ))
+                <ToDoItem key={todo.text} onComplete={() => completeToDo(todo.text)} onDelete={() => deleteToDo(todo.text)} {...todo} />
+              ))
           ) : <li className="text-center">No existen tareas que coincidan con tu busqueda.</li>
         }
       </ToDoList>
