@@ -56,7 +56,7 @@ function App() {
   return (
     <>
       <div className='relative w-full h-64'>
-        <img src="/SVG/header.svg" alt="Header" className='absolute h-full w-full -z-10 object-cover object-bottom' />
+        <img src="/svg/header.svg" alt="Header" className='absolute h-full w-full -z-10 object-cover object-bottom' />
         <div className='flex flex-row justify-center items-center h-4/5 w-full'>
           <div>
             <h1 className="font-semibold">Hola, Gabriela</h1>

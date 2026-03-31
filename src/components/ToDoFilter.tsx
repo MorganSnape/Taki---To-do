@@ -5,10 +5,12 @@ import ToDoList from "./ToDoList"
 
 type FilterType = "all" | "completed" | "pending";
 
+import type { TodoColor } from "@/config/todoColors";
+
 type ToDo = {
   text: string;
   completed: boolean;
-  color: string;
+  color: TodoColor;
 }
 
 type Props = {
